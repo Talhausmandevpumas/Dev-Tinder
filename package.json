@@ -1,0 +1,15 @@
+{
+  "name": "namaste-node-project",
+  "version": "1.0.0",
+  "description": "its is a project to connect the web-developer with each other",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "author": "Talha usman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
+  }
+}
