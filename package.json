@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "its is a project to connect the web-developer with each other",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon src/index.js"
   },
@@ -10,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.1",
+    "mongoose": "^8.9.2",
     "nodemon": "^3.1.7"
   }
 }
