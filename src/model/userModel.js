@@ -17,6 +17,10 @@ const userSchema = new mongoose.Schema({
         trim :true,
         lowercase: true
     },
+    profile_pic:{
+        type:String,
+        manLength:150
+    },
     password:{
         type:String,
         minLenght:8
@@ -32,6 +36,9 @@ const userSchema = new mongoose.Schema({
                 throw new Error("this is not a valied gender")
             }
         },
+    },
+    skills : {
+        type:[String]
     }
 },{timestamps:true});
 
