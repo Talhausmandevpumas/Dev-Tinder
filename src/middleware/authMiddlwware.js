@@ -20,6 +20,10 @@ export const loginAuth =  (req,res,next)=>{
 export const tokenVerification =  async (req,res,next)=>{
     const {token} = req.cookies
     try {
+        if (!token) {
+            throw new Error("Token Is Not Valid!!!!");
+            
+        }
         await jwt.verify(token,"talhausman",async function(err, decoded) {
             if (err) {
                 throw new Error(err.message);
@@ -29,12 +33,15 @@ export const tokenVerification =  async (req,res,next)=>{
                 if (!findUser) {
                     throw new Error("user not found")
                 }
+                req.user = findUser
                 next()
             }
           })
-        
-       
     } catch (error) {
-        res.send(error.message)
+        res.status(400).send("ERROR :" +error.message)
     }
+}
+
+export const validateEditFields = async (req,res,next) =>{
+  
 }
